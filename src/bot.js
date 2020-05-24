@@ -1,11 +1,11 @@
 const eris = require('eris');
 const webhookListener = require('./webhook_listener.js');
-const { BOT_OWNER_ID, BOT_TOKEN, LOG_CHANNEL_ID } = require('../config.json');
+const { 713951841142177792, NzEzOTUxODQxMTQyMTc3Nzky.XsnmLg.PUW5-qakF7dv4M0GrXylYU7z9M4, 550610002218319874} = require('../config.json');
 
 const PREFIX = 'pb!';
 const PREMIUM_CUTOFF = 10;
 
-const bot = new eris.Client(BOT_TOKEN);
+const bot = new eris.Client(NzEzOTUxODQxMTQyMTc3Nzky.XsnmLg.PUW5-qakF7dv4M0GrXylYU7z9M4);
 
 const premiumRole = {
   name: 'Premium Member',
@@ -85,7 +85,7 @@ bot.on('messageCreate', async (msg) => {
 
     // If this command is only for the bot owner, refuse
     // to execute it for any other user.
-    const authorIsBotOwner = msg.author.id === BOT_OWNER_ID;
+    const authorIsBotOwner = msg.author.id === 713951841142177792;
     if (command.botOwnerOnly && !authorIsBotOwner) {
       return await msg.channel.createMessage('Hey, only my owner can issue that command!');
     }
@@ -135,7 +135,7 @@ function logDonation(member, donationAmount, paymentSource, paymentId, senderNam
     }
   }
 
-  bot.createMessage(LOG_CHANNEL_ID, logMessage);
+  bot.createMessage(550610002218319874, logMessage);
 }
 
 async function onDonation(
